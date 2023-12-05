@@ -1,22 +1,4 @@
 import g4f
-from g4f.Provider import (
-    AItianhu,           
-    AItianhuSpace,
-    Aichat,
-    Bard,
-    Bing,
-    ChatBase,
-    ChatgptAi,
-    OpenaiChat,
-    Vercel,
-    You,
-    Yqcloud,
-    Raycast,
-    Liaobots,
-    GeekGpt,
-    Phind,
-    FreeGpt
-)
 
 print("Now Starting...")
 print("which model do you want? \n1) gpt-3.5 \n2) gpt-4")
@@ -32,6 +14,8 @@ conversation_history = []
 
 while True:
     user_input = str(input())
+    if user_input == "":
+        break
     messages = conversation_history + [{"role": "user", "content": user_input}]
     response = g4f.ChatCompletion.create(
         model=model,
